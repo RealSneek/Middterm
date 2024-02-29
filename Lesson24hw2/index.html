@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>მე ვფიქრობ რიცხვს 1-დან 1000-მდე, ცადე მისი გამოცნობა!</p>
+
+    <script>
+      let number = Math.floor(Math.random() * 1000 + 1);
+      let guess;
+      let output;
+      let guessed = false;
+
+      do {
+        guess = prompt("გამოიცანი რიცხვი 1-დან 1000-მდე, რა არის შენი რიცხვი?");
+        if (guess == null) break;
+        document.write("თქვენ გამოიცანით რიცხვი " + guess + "<br/>");
+        if (guess > number) {
+          document.write("ძალიან დიდი რიცხვია, ცადეთ უფრო პატარა" + "<br/>");
+          guessed = false;
+        } else if (guess < number) {
+          document.write("ძალიან პატარა რიცხვია, ცადეთ უფრო დიდი" + "<br/");
+          guessed = false;
+        } else {
+          alert("თქვენ გამოიცანით სწორი ციფრი!");
+          guessed = true;
+        }
+      } while (!guessed);
+    </script>
+  </body>
+</html>
